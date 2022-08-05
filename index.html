@@ -3,6 +3,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -11,9 +14,29 @@
     <div id="banner">
 
     </div>
-    <div class="banner"></div>
+    
     <footer>
         <p>Footer</p>
     </footer>
+    <script type="text/babel">
+        const Banner = () => {
+            const title = "Welcome to my world"
+            const subtitle = "This is a website cousre from Udemy."
+            const address = "https://www.udemy.com/course/build-web-apps-with-react-firebase/learn/lecture/29051114#overview"
+            const handlegetDateClick = (e) => {
+                console.log(subtitle, e);
+            }
+            return (
+                <div>
+                    <h1>{title.toUpperCase}</h1>
+                    <p>{subtitle}</p>
+                    <p onClick={handlegetDateClick}>Today's date is {new Date().getDate()}</p>
+                    <a href={ address}>Viisit Netninja</a>   
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('banner')).render(<Banner />);
+    </script>
 </body>
 </html>
